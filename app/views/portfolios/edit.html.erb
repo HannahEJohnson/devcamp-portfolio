@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-  end
+end
 
   # GET /blogs/new
   def new
@@ -24,7 +24,7 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @blog = Blog.new(blog_params)
+    @portfolio_item = Blog.new(blog_params)
 
     respond_to do |format|
       if @blog.save

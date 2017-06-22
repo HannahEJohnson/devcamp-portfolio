@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>All the Blogs</h1>
+<h2>Start Blog here</h2>
 
 <table>
   <thead>
@@ -10,6 +11,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+  <p>make blogs</p>
 
   <tbody>
     <% @blogs.each do |blog| %>
@@ -26,4 +28,4 @@
 
 <br>
 
-<%= link_to 'Make a new blog', new_blog_path %>
+<%= link_to 'New blog', new_blog_path %>

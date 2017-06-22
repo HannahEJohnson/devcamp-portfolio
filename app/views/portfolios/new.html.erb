@@ -1,0 +1,78 @@
+class PortfoliosController < ApplicationController
+  
+  class PortfoliosController < ApplicationController
+  before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
+
+  # GET /blogs
+  # GET /blogs.json
+  def index
+   @portfolio = Portfolio.all
+  end
+
+  # GET /blogs/1
+  # GET /blogs/1.json
+  def show
+  end
+
+  # GET /blogs/new
+  def new
+    @portfolios = Portfolio.new
+  end
+
+  # GET /blogs/1/edit
+  def edit
+  end
+
+  # POST /blogs
+  # POST /blogs.json
+  def create
+    @portfolio = Portfolio.new(blog_params)
+
+    respond_to do |format|
+      if @portfolio.save
+        format.html { redirect_to @portfolio, notice: 'Your post is now live.' }
+        format.json { render :show, status: :created, location: @portfolio }
+      else
+        format.html { render :new }
+        format.json { render json: @portfolio.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /blogs/1
+  # PATCH/PUT /blogs/1.json
+  def update
+    respond_to do |format|
+      if @portfolio.update(portfolio_params)
+        format.html { redirect_to @portfolio, notice: 'Portfolio was successfully updated.' }
+        format.json { render :show, status: :ok, location: @portfolio }
+      else
+        format.html { render :edit }
+        format.json { render json: @portfolio.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /blogs/1
+  # DELETE /blogs/1.json
+  def delete
+    @portfolio.destroy
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: 'Portfolio was removed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_blog
+      @portfolio = Portfolio.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def blog_params
+      params.require(:portfolio).permit(:title, :body, :subtitle)
+    end
+end
+
+end
