@@ -8,7 +8,7 @@
 
 
 10.times do |blog|
-  blog.create!(
+   Blog.create(
     title: "MY blog post #{blog}",
     body: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, 
     eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
@@ -19,19 +19,13 @@
     puts "10 blog posts created"
 
 5.times do |skill| 
-  skill.create!(
+  Skill.create!(
     title: "Rails #{skill}",
     percent_utilized:15,
     )
   end
       puts "5 skills created"
       9.times do |portfolio_item|
-        portfolio.create!(
-          title: "portfolio title #{portfolio_title}",
-          subtitle:"my great service" ,
-          body:"this is the body" ,
-          main_image:"http://placehold.it/600x400" ,
-          thumb_image:"http://placehold.it/350x200"
-          )
+        Portfolio.create!(title: "portfolio title #{portfolio_title}",subtitle:"my great service" ,body:"this is the body" ,main_image:"http://placehold.it/600x400" ,thumb_image:"http://placehold.it/350x200")
         end
       puts "9 portfolio items created"
