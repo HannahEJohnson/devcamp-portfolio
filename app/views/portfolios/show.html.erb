@@ -1,0 +1,10 @@
+<h1>Show</h1>
+<%= @portfolio_item.inspect %>
+
+<p><%= link_to portfolio_item.title, portfolio_path(portfolio_item.id) %></p>
+
+<h1><%= @portfolio_item.title %></h1>
+
+<em><%= @portfolio_item.subtitle %></em>
+
+<p><%= @portfolio_item.body %></p>
