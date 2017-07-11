@@ -72,6 +72,3 @@ class BlogsController < ApplicationController
       params.require(:blog).permit(:title, :body)
     end
 end
-def toggle_status
-  byebug
-end

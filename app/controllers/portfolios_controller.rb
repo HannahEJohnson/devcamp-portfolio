@@ -44,6 +44,6 @@ def destroy
 
     # Redirect
     respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'Post was removed.' }
+      format.html { redirect_to portfolios_path, notice: 'Post was removed.' }
     end
 end
